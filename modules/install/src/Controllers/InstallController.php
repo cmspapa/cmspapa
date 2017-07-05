@@ -8,22 +8,41 @@ use Cmspapa\Core\Controllers\Controller;
 class InstallController extends Controller
 {
 	/**
-     * .
-     *
-     * @return view
-     */
-    public function getInstall()
-    {
-    	// Check if configuration exists load page otherwise run installer
-    	return view('install::install_db');
-    }
-
-    /**
-     * .
+     * Init Install.
      *
      * @return redirect
      */
-    public function postInstall(Request $request)
+    public function install()
+    {
+    	return redirect('/install-verify-requirments');
+    }
+
+    /**
+     * Verify CMS requirments.
+     *
+     * @return redirect
+     */
+    public function verifyRequirments()
+    {
+    	return redirect('/install-setup-database');
+    }
+
+	/**
+     * Provide form to fill database information.
+     *
+     * @return view
+     */
+    public function getSetupDatabase()
+    {
+    	return view('install::install_setup_database');
+    }
+
+    /**
+     * Post information and create .env file.
+     *
+     * @return redirect
+     */
+    public function postSetupDatabase(Request $request)
     {
 	    $path = base_path('.env');
 
@@ -61,6 +80,63 @@ class InstallController extends Controller
 		    ));
 		}
 
-		return 'done';
+		return redirect('/install-papa-dependencies');
+    }
+
+    /**
+     * Provide install progress bar for papa dependencies.
+     *
+     * @return view
+     */
+    public function getPapaDependencies()
+    {
+    	//temp
+    	return redirect('/install-configure-site');//
+    	return view('install::install_papa_dependencies');
+    }
+
+    /**
+     * Post install papa dependencies.
+     *
+     * @return redirect
+     */
+    public function postPapaDependencies(Request $request)
+    {
+
+
+		return redirect('/install-configure-site');
+    }
+
+    /**
+     * Provide form to fill site information.
+     *
+     * @return view
+     */
+    public function getConfigureSite()
+    {
+    	//temp
+    	return redirect('/install-finished');//
+    	return view('install::install_configure_site');
+    }
+
+    /**
+     * Post information and create .env file.
+     *
+     * @return redirect
+     */
+    public function postConfigureSite(Request $request)
+    {
+
+		return redirect('/install-finished');
+    }
+
+    /**
+     * View that contains some information about cms and quick links.
+     *
+     * @return view
+     */
+    public function getFinished()
+    {
+    	return view('install::install_finished');
     }
 }
