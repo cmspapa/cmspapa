@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    // Check if configuration exists load page otherwise run installer
-    return redirect('/install');
-});
+// Route::get('/', function () {
+//     // Check if configuration exists load page otherwise run installer
+//     return 'home page';
+//     //return redirect('/install');
+// });
+
