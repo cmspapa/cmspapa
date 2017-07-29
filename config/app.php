@@ -249,6 +249,6 @@ return [
     |
     |
     */
-    'app_theme' => 'bootstrap',
+    'app_theme' => 'start',
 
 ];

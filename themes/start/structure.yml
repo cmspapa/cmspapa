@@ -1,0 +1,11 @@
+component_1:
+    type: navbar
+    is_region: 'true'
+    region_name: Navbar
+component_2:
+    type: container-fluid
+    level_two: { component_2_component_1: { type: row, columns: { component_2_component_1_col_1: { width: '6', is_region: 'true', region_name: 'Left sidebare' }, component_2_component_1_col_2: { width: '6', is_region: 'true', region_name: 'Right sidebare' } } } }
+component_3:
+    type: footer
+    is_region: 'true'
+    region_name: Footer

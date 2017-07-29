@@ -1,0 +1,1 @@
+<p style="text-align: center;"> {{ $mymodule_block_test }} </p>
