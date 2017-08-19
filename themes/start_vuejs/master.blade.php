@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="/themes_start_assets/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,7 +24,6 @@
         color:#fff;
       }*/
       .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-          height: 200px;
           border: 1px solid #fff;
           background: #eee;
       }
@@ -36,10 +36,14 @@
     </style>
   </head>
   <body>
-    @include('structure::base')
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/themes_start_assets/js/bootstrap.min.js"></script>
-  </body>
+	<div id="app">
+  
+  <structure></structure>
+  </div>
+	<script type="text/javascript">
+		// Send objects to Vue
+		var vueComponents = {!! json_encode($vueComponents) !!};
+	</script>
+	<script src="/js/app.js"></script>
+</body>
 </html>

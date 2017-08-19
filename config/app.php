@@ -144,7 +144,7 @@ return [
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
-        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+        // Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class, // moved to papa core
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
@@ -249,6 +249,6 @@ return [
     |
     |
     */
-    'app_theme' => 'start',
+    'app_theme' => 'start_vuejs',
 
 ];
