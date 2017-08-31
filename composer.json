@@ -12,8 +12,7 @@
         "classmap": [
         ],
         "psr-4": {
-            "App\\": "app/",
-            "Cmspapa\\Core\\": "packages/cmspapa/core/src"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
