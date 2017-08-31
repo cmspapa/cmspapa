@@ -1,50 +1,15 @@
 <template>
-  <div id="app">
-    <img src="http://vuejs.org/images/logo.png">
-    <h1>\{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      
-    </ul>
-  </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">My module Component</div>
+
+        <div class="panel-body">
+            This is a my module 
+        </div>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    export default {
+        
     }
-  }
-}
 </script>
-
-<style scoped>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-img {
-  width: 200px;
-  height: 200px;
-}
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

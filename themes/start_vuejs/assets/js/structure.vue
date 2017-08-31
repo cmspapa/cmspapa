@@ -1,15 +1,22 @@
 <template>
     <div>
+      <!-- Temp menu -->
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link to="/content/1">Page</router-link>
+      
         <template v-for="(region, index) in regions">
             <!-- Start empty section -->
             <template v-if="region.type == 'empty-section'">
                 <template v-if="region.is_region == 'true'">
                     <!-- Here's empty section -->
                     <template v-for="(component, index) in region.components">
-                        <component :is="component" :key="component"></component>
-                        <!-- Temp menu -->
-                        <router-link to="/">Home</router-link>
-                        <router-link to="/about">About</router-link>
+                        <template v-if="component =='Content'">
+                          <router-view></router-view>
+                        </template>
+                        <template v-else>
+                          <component :is="component" :key="component"></component>
+                        </template>
                     </template>
 
                 </template>
@@ -28,9 +35,12 @@
                                         <template v-if="column.is_region == 'true'">
                                              <!-- Here's container column -->
                                             <template v-for="(component, index) in column.components">
-                                                <component :is="component" :key="component"></component>
-                                                <!-- Temp which equal content component -->
-                                                <router-view></router-view>
+                                                <template v-if="component =='Content'">
+                                                  <router-view></router-view>
+                                                </template>
+                                                <template v-else>
+                                                  <component :is="component" :key="component"></component>
+                                                </template>
                                             </template>
                                         </template>
                                     </div>
@@ -48,14 +58,19 @@
                     <template v-if="region.is_region == 'true'">
                         <!-- Here's footer -->
                         <template v-for="(component, index) in region.components">
+                          <template v-if="component =='Content'">
+                            <router-view></router-view>
+                          </template>
+                          <template v-else>
                             <component :is="component" :key="component"></component>
+                          </template>
                         </template>
                     </template>
                 </footer>
             </template>
             <!-- End footer -->
         </template>
-    </div>    
+    </div>
 </template>
 
 <script>

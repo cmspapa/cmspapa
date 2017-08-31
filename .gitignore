@@ -11,3 +11,4 @@ npm-debug.log
 .env
 #cmspapa
 packages
+.DS_Store

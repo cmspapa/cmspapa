@@ -24,15 +24,18 @@ for (var i = 0;  i < vueComponents.length;  i++) {
 Vue.component('structure', require('./structure.vue'));
 Vue.component('home', require('./components/home.vue'));
 Vue.component('about', require('./components/about.vue'));
+Vue.component('page', require('./components/page.vue'));
 
 // Routes
 const NotFound = { template: '<p>Page not found</p>' }
 const Home = { template: '<home></home>' }
 const About = { template: '<about></about>' }
+const Page = { template: '<page></page>' }
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/about', component: About }
+  { path: '/about', component: About },
+  { path: '/content/1', component: Page }
 ]
 
 const router = new VueRouter({

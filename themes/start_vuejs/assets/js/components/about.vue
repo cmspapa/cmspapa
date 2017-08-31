@@ -3,13 +3,13 @@
         <div class="panel-heading">About Component</div>
 
         <div class="panel-body">
-            This is my home page data which we need to include it dynamic
+            This an example for static data came form files
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        
+
     }
 </script>
